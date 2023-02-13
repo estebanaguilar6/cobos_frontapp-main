@@ -1,0 +1,191 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	text-decoration: none;
+}
+body{
+	min-height: 100vh;
+	background: #222327;
+	color: #fff;
+}
+header{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	right: 0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: transparent;
+	padding: 30px 8%;
+	transition: all .50s ease;
+}
+.barra a{
+	color:#FFF ;
+}
+#home{
+	display: flex;
+	flex-direction: center;
+	width: 100vw;
+	max-width: 1000px;
+	min-width: 320px;
+}
+#home::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: url('/assets/BGindex.jpg');
+	width: 100%;
+	margin: auto;
+	height: 100%;
+	opacity: .100;
+}
+.text-box{
+	width: 90%;
+	color: #FFF;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+}
+.text-box h1{
+	font-family: 'Poppins';
+	font-weight: 700;
+	font-size: 62px;
+}
+.text-box p{
+	margin: 30px 0 60px;
+	font-size: 15px;
+	color: #fff;
+
+}
+.logo{
+	display: flex;
+	align-items: center;
+}
+.logo span{
+	font-size: 	2rem;
+	background: linear-gradient(#29fd53, #29fd53);
+	color: transparent;
+	background-clip: text;
+	font-weight: 800;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	animation: text 5s linear infinite;
+}
+.course{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	padding-top: 100px;
+}
+h1{
+	font-size: 36px;
+	font-weight: 600;
+}
+p{
+	color: #777;
+	font-size: 15px;
+	font-weight: 300px;
+	line-height: 22px;
+	padding: 10px;
+
+}
+.row{
+	margin-top: 5%;
+	display: flex;
+	justify-content: space-around;
+}
+.course-col{
+	flex-basis: 40%;
+	background: #D0D0D0;
+	border-radius: 10px;
+	margin-bottom: 5%;
+	padding: 20px 40px;
+	box-sizing: border-box;
+	transition: 0.5s;
+}
+.course-col:hover{
+	box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+@keyframes text{
+	0%{
+		filter: hue-rotate(0deg);
+	}
+	100%{
+		filter: hue-rotate(330deg);
+	}
+}
+.logo span:hover{
+	color: #29fd53;
+}
+.logo span.active{
+	color: #29fd53;
+}
+.main{
+	display: flex;
+	align-items: center;
+}
+.main a{
+	margin-right: 25px;
+	margin-left: 10px;
+	color: #fff;
+	font-size: 1.1rem;
+	font-weight: 500;
+	transition: all .50s ease;
+}
+.user{
+	display: flex;
+	align-items: center;
+}
+.user i{
+	color: #29fd53;
+	font-size: 28px;
+	margin-right: 7px;
+}
+.main a:hover{
+	color: #29fd53;
+}
+#menu-icon{
+	font-size: 35px;
+	color: #FFF;
+	cursor: pointer;
+	z-index: 10001;
+	display: none;
+}
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+.my-float{
+	margin-top:16px;
+}
+.BTC{
+	width: 90px;
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+}
+.broker a{
+	color: #777;
+	font-weight: 600;
+	font-size: 30px;
+	position: fixed;
+	bottom: 46px;
+	left: 110px;
+}

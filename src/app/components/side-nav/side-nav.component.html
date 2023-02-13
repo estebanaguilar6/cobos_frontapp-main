@@ -1,0 +1,48 @@
+<html>
+  <head>
+ 
+  </head>
+  <body>
+    <div class="area">
+
+    </div>
+        <nav class="main-menu">
+            <ul>
+                <li>
+                    <a (click)="Dashboard()">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            Panel
+                        </span>
+                    </a>
+                  
+                </li>
+                <ng-container *ngIf="role === 'Admin'">
+                    <li class="has-subnav">
+                        <a (click)="Users()">
+                            <i class="fa fa-users"></i>
+                            <span class="nav-text">Users</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="Broker">
+                            <i class="fa fa-bar-chart-o fa-2x"></i>
+                            <span class="nav-text">Broker</span>
+                        </a>
+                    </li>
+                </ng-container>
+            </ul>
+
+            <ul class="logout">
+                <li>
+                   <a (click)="logout()">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            Logout
+                        </span>
+                    </a>
+                </li>  
+            </ul>
+        </nav>
+  </body>
+</html>

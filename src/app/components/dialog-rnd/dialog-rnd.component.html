@@ -1,0 +1,52 @@
+<h2 mat-dialog-title>{{action}} Rendimiento</h2>
+<mat-dialog-content>
+    <form [formGroup]="formRnd">
+        <mat-grid-list cols="1" rowHeight="80px">
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Cliente</mat-label>
+                    <mat-select formControlName="userId">
+                        <mat-option *ngFor="let item of listUser" [value]="item.id">
+                            {{item.name}} {{item.lastName}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Tipo Inversión</mat-label>
+                    <input matInput autocomplete="off" formControlName="typeinvestment">
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Rendimiento Mensual</mat-label>
+                    <input matInput autocomplete="off" formControlName="rend_mont">
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-label>Rendimiento Total</mat-label>
+                    <input matInput autocomplete="off" formControlName="rend_total">
+                </mat-form-field>
+            </mat-grid-tile>
+
+            
+        </mat-grid-list>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close color="warn">
+        Cancelar
+    </button>
+    <button mat-raised-button color="primary"
+        [disabled]="formRnd.invalid"
+        (click)="addEditRnd()">
+            {{actionButton}}
+    </button>
+</mat-dialog-actions>

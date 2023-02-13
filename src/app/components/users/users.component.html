@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="./users.component.scss">
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <app-side-nav></app-side-nav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div style="width: 80%; margin-top: 50px; margin: auto; padding: 20px;">
+         
+      <mat-form-field appearance="fill">
+        <mat-label>Filtro</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Escribe la palabra" #input>
+      </mat-form-field>
+
+      <button style="margin-left:20px" mat-raised-button color="primary" (click)="addNewRnd()">
+        <mat-icon mat-list-icon>add</mat-icon>Nuevo Rendimiento
+      </button>
+      <button style="margin-left:20px" mat-raised-button color="primary" (click)="addNewUser()">
+        <mat-icon mat-list-icon>add</mat-icon>Nuevo Usuario
+      </button>
+
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataRendimiento" matSort>
+          <ng-container matColumnDef="Nombre">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+            <td mat-cell *matCellDef="let row">{{row.userName}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Apellido">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Apellido</th>
+            <td mat-cell *matCellDef="let row">{{row.userLastName}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Tipo de inversion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo de inversion</th>
+            <td mat-cell *matCellDef="let row">{{row.typeinvestment}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Rend Mont">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Rend Mes</th>
+            <td mat-cell *matCellDef="let row">{{row.rend_mont}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Rend Total">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Rend Total</th>
+            <td mat-cell *matCellDef="let row">{{row.rend_total}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Opciones">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 80px;"></th>
+            <td style="display: flex; flex-direction: row;" mat-cell *matCellDef="let row">
+              <button mat-icon-button color="primary">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warm">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="titles"></tr>
+          <tr mat-row *matRowDef="let row; columns:titles;"></tr>
+
+          <tr class="mat-row" *matNoDataRow="">
+            <td class="mat-cell" colspan="4">No dat matching the filter "{{input.value}}"</td>
+          </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5,10,25,100]" aria-label="Select page of Rends">
+
+        </mat-paginator>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

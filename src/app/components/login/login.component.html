@@ -1,0 +1,30 @@
+<body>
+	<header>
+		<link rel="stylesheet" src="login.component.scss">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="preconnect" href= "https://fonts.googleapis.com">
+        <link rel="preconnect" href= "https://fonts.gstatic.com" crossorigin>
+		<link href= "https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel= "stylesheet">
+		<a routerLink="" class="logo"><span>Lobos Capital</span></a>
+    </header>
+    <div class="box">
+		<form autocomplete="off" [formGroup]="loginForm">
+			<h1>Inicio De Sesion</h1>
+			<div class="inputBox">
+				<input input formControlName="username" type="text" required="required">
+				<span>Usuario</span>
+				<i></i>
+			</div>
+			<div class="inputBox">
+				<input formControlName="password" type="password" required="required">
+				<span>Contraseña</span>
+				<i></i>
+			</div>
+			<div class="links">
+				<a href="https://api.whatsapp.com/send?phone=573177797467&text=Olvide%20mi%20contraseña." class="link" target="_blank">Olvide mi contraseña</a>
+			</div>
+            <button (click)="onLogin()" type="submit">Login</button>
+		</form>
+	</div>
+    
+</body>
